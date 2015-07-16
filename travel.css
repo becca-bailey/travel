@@ -56,12 +56,16 @@ body {
 
 p {
   line-height: 1.2; }
+  p a {
+    color: gray; }
+    p a:hover {
+      color: #008baa; }
 
 h1, h2, h3, h4 {
   font-family: "Open Sans", sans-serif;
   margin-bottom: 2%; }
   h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
-    color: #ff6666; }
+    color: #008baa; }
 
 h1 {
   font-weight: 300;
@@ -69,22 +73,32 @@ h1 {
   padding: 2%; }
 
 h2 {
+  font-family: 'Raleway', sans-serif;
   font-size: 2.5em;
   font-weight: 600;
-  font-style: italic; }
+  border-bottom: 1px solid gray; }
 
 h3 {
-  font-size: 2em; }
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center; }
 
 h4 {
   font-size: 1.2em;
   font-weight: 600; }
 
 .bold {
-  font-weight: 600; }
+  font-weight: 600;
+  color: #008baa; }
 
 a {
   text-decoration: none; }
+
+hr {
+  max-width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-top: 1px solid gray; }
 
 header {
   background-image: url("images/frontphoto.jpg");
@@ -93,10 +107,16 @@ header {
   width: 100%;
   height: 100vh;
   margin-bottom: 2%; }
+  header h1 {
+    margin-left: 1%; }
   header nav {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    /* IE */
+    display: -ms-flex;
+    -ms-flex-direction: column;
+    -ms-flex-wrap: wrap; }
     header nav .navigation {
       padding: 2%; }
       header nav .navigation div {
@@ -104,18 +124,20 @@ header {
         border-radius: 5px;
         background-color: rgba(255, 255, 255, 0.5);
         margin-bottom: 5px;
-        display: flex;
-        cursor: pointer; }
+        cursor: pointer;
+        display: -ms-flex;
+        text-align: center; }
         header nav .navigation div:hover {
           background-color: rgba(255, 255, 255, 0.7); }
   header #header_text {
     position: absolute;
     bottom: 0;
-    color: white;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 3%;
     max-width: 100%;
     color: #404040; }
+    header #header_text h2 {
+      border-bottom: none; }
     header #header_text p {
       font-weight: 300;
       font-size: 2em; }
@@ -126,44 +148,43 @@ header {
     margin: 2%;
     margin-bottom: 8%; }
     .destinations h2:hover {
-      color: #ff6666; }
-  .destinations .boxes {
-    /*@include mobile_flex;*/ }
-    .destinations .boxes .box_text {
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 2%;
-      width: 100%;
-      font-family: "Open Sans", sans-serif;
-      text-align: center; }
-      .destinations .boxes .box_text:hover {
-        background-color: rgba(255, 255, 255, 0.7); }
-    .destinations .boxes #box1 {
-      background-size: cover;
-      backround-position: center;
-      width: 80%;
-      height: 60vw;
-      display: flex;
-      align-items: flex-end;
-      margin: 10px auto 10px auto;
-      background-image: url("images/southamerica.jpg"); }
-    .destinations .boxes #box2 {
-      background-size: cover;
-      backround-position: center;
-      width: 80%;
-      height: 60vw;
-      display: flex;
-      align-items: flex-end;
-      margin: 10px auto 10px auto;
-      background-image: url("images/europe.jpg"); }
-    .destinations .boxes #box3 {
-      background-size: cover;
-      backround-position: center;
-      width: 80%;
-      height: 60vw;
-      display: flex;
-      align-items: flex-end;
-      margin: 10px auto 10px auto;
-      background-image: url("images/asia.jpg"); }
+      color: #008baa; }
+  .destinations .boxes .box_text {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2%;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    text-transform: uppercase; }
+    .destinations .boxes .box_text:hover {
+      background-color: rgba(255, 255, 255, 0.7); }
+  .destinations .boxes #box1 {
+    background-size: cover;
+    backround-position: center;
+    width: 80%;
+    height: 60vw;
+    display: flex;
+    align-items: flex-end;
+    margin: 10px auto 10px auto;
+    background-image: url("images/southamerica.jpg"); }
+  .destinations .boxes #box2 {
+    background-size: cover;
+    backround-position: center;
+    width: 80%;
+    height: 60vw;
+    display: flex;
+    align-items: flex-end;
+    margin: 10px auto 10px auto;
+    background-image: url("images/europe.jpg"); }
+  .destinations .boxes #box3 {
+    background-size: cover;
+    backround-position: center;
+    width: 80%;
+    height: 60vw;
+    display: flex;
+    align-items: flex-end;
+    margin: 10px auto 10px auto;
+    background-image: url("images/asia.jpg"); }
 
 .search_background {
   max-width: 94%;
@@ -215,13 +236,10 @@ header {
 .blog {
   max-width: 94%;
   margin-left: auto;
-  margin-right: auto;
-  margin: 2%; }
+  margin-right: auto; }
   .blog h2 {
     margin: 2%;
     margin-bottom: 8%; }
-    .blog h2 a:hover {
-      color: #r8d53a; }
   .blog .blog_post {
     display: flex;
     flex-direction: row; }
@@ -246,15 +264,13 @@ header {
       margin: 0 3%;
       cursor: pointer;
       background-image: url("images/blog2.jpg"); }
-  .blog hr {
-    max-width: 80%;
-    margin-top: 5%;
-    margin-bottom: 5%; }
   .blog .blog_info {
     display: flex;
     margin: 2%;
     justify-content: space-around;
-    color: gray; }
+    color: gray;
+    float: right;
+    paddig-right: 2%; }
     .blog .blog_info li {
       flex-direction: row;
       font-size: .9em; }
@@ -262,6 +278,8 @@ header {
         color: gray; }
       .blog .blog_info li a:hover {
         color: #404040; }
+  .blog hr {
+    clear: both; }
 
 footer {
   background-image: url("images/frontphoto.jpg");
@@ -280,14 +298,16 @@ footer {
       border-radius: 5px;
       background-color: rgba(255, 255, 255, 0.5);
       margin-bottom: 5px;
-      display: flex;
-      cursor: pointer; }
+      cursor: pointer;
+      display: -ms-flex; }
       footer nav div div:hover {
         background-color: rgba(255, 255, 255, 0.7); }
   footer p {
     text-align: center;
     color: white;
     margin-top: 2%; }
+    footer p .bold {
+      color: white; }
 
 .clearfix:after {
   visibility: hidden;
@@ -322,12 +342,17 @@ footer {
     header nav {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap; }
+      flex-wrap: nowrap;
+      /* IE */
+      display: -ms-flex;
+      -ms-flex-direction: row;
+      -ms-flex-wrap: nowrap; }
       header nav div {
-        display: flex;
         width: 100%;
         justify-content: space-around;
-        margin: 1%; }
+        margin: 1%;
+        display: flex;
+        display: -ms-flex; }
     header #header_text {
       position: relative; }
 
@@ -337,17 +362,17 @@ footer {
   footer nav {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    /* IE */
+    display: -ms-flex;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: nowrap; }
     footer nav div {
-      display: flex;
       width: 100%;
       justify-content: space-around;
-      margin: 1%; }
-  footer p {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.5);
-    max-width: 100%;
-    padding: 2px; } }
+      margin: 1%;
+      display: flex;
+      display: -ms-flex; } }
 @media screen and (min-width: 660px) {
   h1 {
     font-size: 5em; }
@@ -360,6 +385,7 @@ footer {
 
   .destinations {
     width: 80%;
+    margin: 2%;
     margin-left: auto;
     margin-right: auto; }
     .destinations .boxes {
@@ -369,11 +395,14 @@ footer {
       .destinations .boxes #box1, .destinations .boxes #box2, .destinations .boxes #box3 {
         background-size: cover;
         backround-position: center;
-        display: flex;
-        align-items: flex-end;
         width: 100%;
         height: 40vh;
-        margin: auto; }
+        margin: auto;
+        display: flex;
+        align-items: flex-end;
+        /* IE */
+        display: -ms-flex;
+        align-items: -ms-flex-end; }
     .destinations .search_background {
       width: 100%;
       height: 30vw;
@@ -381,7 +410,8 @@ footer {
       margin-top: 2%; }
       .destinations .search_background #search_bar {
         margin-top: 8%;
-        font-size: 2em; }
+        font-size: 2em;
+        width: 70%; }
 
   .blog {
     width: 80%;
@@ -407,6 +437,9 @@ footer {
 
   .destinations h2 {
     margin-bottom: 4%; }
+
+  .search_background .destination_search #search_bar {
+    width: 50%; }
 
   .blog h2 {
     margin-bottom: 4%; }
