@@ -1,0 +1,283 @@
+@import '_reset.scss';
+@import '_mixins.scss';
+
+/* Variables */
+
+$font: 'Open Sans', sans-serif;
+$margin: 2%;
+$padding: 2%;
+$bold: 600;
+$light: 300;
+$color1: #r8d53a;
+$background: rgba(255, 255, 255, .5);
+$background-color: #f7f7f7;
+$background-hover: rgba(255, 255, 255, .7);
+$text-color: #404040;
+$text-hover: #ff6666;
+
+/* Landing Page Styles */
+
+body {
+	font-family: $font;
+	font-weight: $light;
+	background-color: $background-color;
+	a {
+		color: $text-color;
+	}
+}
+
+p {
+	line-height: 1.2;
+}
+
+h1, h2, h3, h4 {
+	font-family: $font;
+	margin-bottom: $margin;
+	a:hover {
+		color: $text-hover;
+	}
+}
+
+h1 {
+		font-weight: $light;
+		font-size: 4em;
+		padding: $padding;
+	}
+
+h2 {
+	font-size: 2.5em;
+	font-weight: 600;
+	font-style: italic;
+	}
+
+h3 {
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+.bold {
+	font-weight: $bold;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	background-image: url("images/frontphoto.jpg");
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100vh;
+	margin-bottom: $margin;
+	nav {
+		@include mobile_flex;
+		.navigation {
+		padding: $padding;
+		
+			div {
+				@include mobile_navigation;
+				&:hover {
+					background-color: $background-hover;
+				}
+			}	
+		}
+	}
+
+	#header_text {
+		position: absolute;
+		bottom: 0;
+		color: white;
+		background-color: $background;
+		padding: 3%;
+		max-width: 100%;
+		color: $text-color;
+		
+
+		p {
+			font-weight: $light;
+			font-size: 2em;
+		}
+	}
+}
+
+.destinations {
+	
+	padding: $padding;
+	h2 {
+		margin: $margin;
+		margin-bottom: 8%;
+			&:hover {
+			color: $text-hover;
+		}
+	}
+	.boxes {
+		/*@include mobile_flex;*/
+		.box_text {
+			background-color: $background;
+			padding: $padding;
+			width: 100%;
+			font-family: $font;
+			text-align: center;
+			&:hover {
+				background-color: $background-hover;
+			}
+
+		}
+
+		#box1 {
+			@include mobile_boxes;
+			background-image: url("images/southamerica.jpg");
+
+		}
+
+		#box2 {
+			@include mobile_boxes;
+			background-image: url("images/europe.jpg");
+		}
+
+		#box3 {
+			@include mobile_boxes;
+			background-image: url("images/asia.jpg");
+		}
+	}
+
+}
+
+.search_background {
+	@include standard_width;
+	@include mobile_boxes;
+	width: 80%;
+	background-image: url("images/searchbox.jpg");
+	background-size: cover;
+	background-position: center;
+	.destination_search {
+		height: 100%;
+		width: 100%;
+		vertical-align: center;
+		background-color: $background;
+		text-align: center;
+		#search_bar {
+			border: 1px solid $text-color;
+			background-color: $background;
+			width: 80%;
+			padding: 1%;
+			font-size: 1.1em;
+			margin-bottom: $margin;
+			margin-top: 20%;
+			font-family: $font;
+			color: $text-color;
+			&:hover {
+				background-color: $background-hover;
+			}
+		}
+		#button {
+			background-color: $background;
+			border: 1px solid gray;
+			border-radius: 5px;
+			padding: $padding;
+			font-size: 1.2em;
+			margin-top: $margin;
+			font-family: $font;
+			font-size: 1.5em;
+			color: $text-color;
+			cursor: pointer;
+			&:hover {
+				background-color: $background-hover;
+			}
+		}
+	}
+}
+
+.blog {
+	@include standard_width;
+	margin: $margin;
+	h2 {
+		margin: $margin;
+		margin-bottom: 8%;
+		a:hover {
+			color: $color1;
+		}
+	}
+	.blog_post {
+		display: flex;
+		flex-direction: row;
+		div {
+			width: 60%;
+			max-width: 100%;
+		}
+		#blog1 {
+			@include blog_image;
+			background-image: url("images/blog1.jpg");
+		}
+		#blog2 {
+			@include blog_image;
+			background-image: url("images/blog2.jpg");
+		}
+	}
+	hr {
+		max-width: 80%;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+	.blog_info {
+		display: flex;
+		margin: $margin;
+		justify-content: space-around;
+		color: gray;
+		li {
+			flex-direction: row;
+			font-size: .9em;
+			a {
+				color: gray;
+			}
+			a:hover {
+				color: $text-color;
+			}
+		}
+	}
+}
+
+footer {
+	background-image: url("images/frontphoto.jpg");
+	margin-top: 10%;
+	padding-top: 3%;
+	padding-bottom: 2%;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	nav {
+		@include standard_width;
+		div div {
+			@include mobile_navigation;
+			&:hover {
+				background-color: $background-hover;
+				}
+		}
+	}
+	p {
+		text-align: center;
+		color: white;
+		margin-top: $margin;
+	}
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+/* Media Queries*/
+
+@import '_media.scss';
