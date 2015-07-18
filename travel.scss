@@ -64,9 +64,7 @@ h2 {
 }
 
 h3 {
-	font-size: 2em;
-	text-transform: uppercase;
-	text-align: center;
+	font-size: 1.2em;
 
 }
 
@@ -272,7 +270,36 @@ header {
 	}
 }
 
+#archives {
+	float: left;
+}
+
+#bottom-search {
+	float: right;
+}
+
+#search2 {
+	border: 1px solid gray;
+	background-color: $background;
+	padding: 1%;
+	margin-left: -2%;
+	&:hover {
+		background-cover: $background_hover;
+	}
+}
+
+#button2 {
+	border: 1px solid gray;
+	background-color: $background;
+	font-family: $font;
+	border-radius: 5px;
+	&:hover {
+		background-color: $background_hover;
+	}
+}
+
 footer {
+	clear: both;
 	background-image: url("images/frontphoto.jpg");
 	margin-top: 10%;
 	padding-top: 3%;
@@ -285,7 +312,8 @@ footer {
 		div div {
 			@include mobile_navigation;
 			&:hover {
-				background-color: $background-hover;
+				background-color: $background_hover;
+				font-weight: 600;
 				}
 		}
 	}

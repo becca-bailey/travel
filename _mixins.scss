@@ -63,9 +63,23 @@
 	margin: auto;
 	display: flex;
 	align-items: flex-end;
-	/* IE */
 	display: -ms-flex;
 	align-items: -ms-flex-end;
+	
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	overflow: hidden;
+
+	
+	&:hover {
+		background-size: 170%;
+		background-position: center;
+		-webkit-transition: all 3s ease-in-out;
+		-moz-transition: all 3s ease-in-out;
+		transition: all 3s ease-in-out;
+
+	}
 	
 }
 
