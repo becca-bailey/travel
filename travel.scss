@@ -1,9 +1,15 @@
 @import '_reset.scss';
 @import '_mixins.scss';
 
+@font-face {
+	font-family: Lovelo; 
+	src: url("fonts/Lovelo Black.otf");
+}
+
 /* Variables */
 
 $font: 'Open Sans', sans-serif;
+$heading: 'Lovelo', sans-serif;
 $margin: 2%;
 $padding: 2%;
 $bold: 600;
@@ -51,7 +57,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
 	font-size: 2.5em;
 	font-weight: 600;
 	border-bottom: 1px solid gray;
@@ -105,6 +111,8 @@ header {
 				text-align: center;
 				&:hover {
 					background-color: $background-hover;
+					font-weight: 600;
+
 				}
 			}	
 		}
@@ -145,6 +153,8 @@ header {
 			padding: $padding;
 			width: 100%;
 			font-family: $font;
+			font-size: 1.6em;
+			font-weight: 600;
 			text-align: center;
 			text-transform: uppercase;
 			&:hover {
