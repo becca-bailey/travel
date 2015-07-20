@@ -23,6 +23,10 @@ $text-hover: #008baa;
 
 /* Landing Page Styles */
 
+* {
+	max-width: 100%;
+}
+
 body {
 	font-family: $font;
 	font-weight: $light;
@@ -100,7 +104,6 @@ header {
 	margin-bottom: $margin;
 	
 	nav {
-		@include mobile_flex;
 		.navigation {
 		padding: $padding;
 		
@@ -259,15 +262,13 @@ header {
 	}
 
 	.blog_info {
-		display: flex;
+		display: inline-flex;
 		margin: $margin;
-		justify-content: space-around;
 		color: gray;
 		float: right;
-		paddig-right: $padding;
+		padding-right: $padding;
 		
 		li {
-			flex-direction: row;
 			font-size: .9em;
 			
 			a {
@@ -357,6 +358,8 @@ footer {
 .clearfix { display: inline-block; }
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
+
+
 
 /* Media Queries*/
 

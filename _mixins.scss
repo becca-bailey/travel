@@ -4,16 +4,6 @@
 	margin-right: auto;
 }
 
-@mixin mobile_flex {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	/* IE */
-	display: -ms-flex;
-	-ms-flex-direction: column;
-	-ms-flex-wrap: wrap;
-}
-
 @mixin flex {
 	display: flex;
 	flex-direction: row;
@@ -52,7 +42,6 @@
 	background-color: $background;
 	margin-bottom: 5px;
 	cursor: pointer;
-	display: -ms-flex;
 }
 
 @mixin boxes {
@@ -63,14 +52,16 @@
 	margin: auto;
 	display: flex;
 	align-items: flex-end;
+
+	/* IE */
 	display: -ms-flex;
 	align-items: -ms-flex-end;
-	
+
+	/*Hover Effect*/
 	-webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out;
 	overflow: hidden;
-
 	
 	&:hover {
 		background-size: 170%;
